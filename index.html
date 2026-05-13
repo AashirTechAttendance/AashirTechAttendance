@@ -248,7 +248,9 @@
           <div class="card-header">
             <h2>Attendance History</h2>
             <div class="card-actions">
-              <select id="history-month-filter" class="select-sm">
+              <select id="history-month-filter" class="select-sm" aria-label="Month Filter">
+  <option value="">Select Month</option>
+</select>
                 <option value="">All Months</option>
               </select>
             </div>
@@ -342,7 +344,11 @@
           </div>
           <div class="search-filter-bar">
             <input type="text" id="student-search" placeholder="🔍 Search by name or roll number…" class="search-input"/>
-            <select id="section-filter" class="select-md">
+            <label for="section-filter">Section</label>
+
+<select id="section-filter" class="select-md">
+  <option value="">Select Section</option>
+</select>
               <option value="">All Sections</option>
             </select>
           </div>
@@ -373,7 +379,7 @@
             <h1 class="page-title">Attendance Records</h1>
           </div>
           <div class="search-filter-bar">
-            <input type="date" id="att-date-filter" class="select-md" />
+           <input type="date" id="att-date-filter" class="select-md" aria-label="Select Date" />
             <input type="text" id="att-student-filter" placeholder="Search student…" class="search-input"/>
           </div>
           <div class="card">
@@ -402,7 +408,11 @@
           <div class="reports-filter-bar">
             <div class="form-group">
               <label>Select Month</label>
-              <input type="month" id="report-month" class="select-md" />
+              <div class="form-group">
+  <label for="report-month">Report Month</label>
+<label for="report-month">Select Month</label>
+<input type="date" id="report-month" name="report-month" />
+</div>
             </div>
             <div class="report-actions">
               <button class="btn-primary" id="generate-report-btn">📊 Generate Report</button>
