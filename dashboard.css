@@ -1,0 +1,112 @@
+/* ═══════════════════════════════════════════════════════
+   STUDENT DASHBOARD STYLES
+═══════════════════════════════════════════════════════ */
+
+/* ── Dashboard Grid ──────────────────────────────────── */
+.dashboard-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;margin-bottom:20px;
+}
+@media(max-width:720px){.dashboard-grid{grid-template-columns:1fr}}
+
+/* ── Attendance Card ─────────────────────────────────── */
+.attendance-card .card-body{padding:20px;text-align:center}
+.attendance-date{
+  font-size:13px;color:var(--text-2);font-weight:500;margin-bottom:14px;
+}
+.today-status{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 18px;border-radius:99px;
+  font-size:14px;font-weight:700;margin-bottom:16px;
+}
+.today-status.present{background:var(--green-100);color:#16a34a}
+.today-status.absent{background:var(--red-100);color:#dc2626}
+.today-status.unmarked{background:var(--yellow-100);color:#d97706}
+.status-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.status-dot.status-green{background:#16a34a}
+.status-dot.status-red{background:#dc2626}
+.status-dot.status-yellow{background:#d97706;animation:blink 1.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.4}}
+
+.attendance-timer{
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;color:var(--text-3);
+  margin-bottom:14px;
+}
+.window-status{
+  font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;
+}
+.window-status.open{background:var(--green-100);color:#16a34a}
+.window-status.closed{background:var(--red-100);color:#dc2626}
+
+.btn-mark-attendance{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:linear-gradient(135deg,var(--blue-600),var(--blue-700));
+  color:#fff;
+  padding:13px 32px;border-radius:12px;
+  font-size:15px;font-weight:700;
+  border:none;cursor:pointer;
+  width:100%;
+  transition:all 0.2s ease;
+  font-family:'Sora',sans-serif;
+  box-shadow:0 4px 16px rgba(37,99,235,0.3);
+}
+.btn-mark-attendance:hover:not(:disabled){
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(37,99,235,0.4);
+}
+.btn-mark-attendance:disabled{
+  background:var(--surface-2);color:var(--text-3);
+  box-shadow:none;cursor:not-allowed;
+}
+.attendance-rule{font-size:11px;color:var(--text-3);margin-top:12px;line-height:1.5}
+
+/* ── Donut / Percentage Card ─────────────────────────── */
+.percentage-card .card-body{padding:20px}
+.donut-wrap{position:relative;width:160px;height:160px;margin-bottom:16px}
+.donut-center{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  text-align:center;pointer-events:none;
+}
+.donut-pct{
+  font-size:28px;font-weight:800;
+  color:var(--text-1);
+  font-family:'JetBrains Mono',monospace;
+  display:block;line-height:1;
+}
+.donut-sub{font-size:11px;color:var(--text-3);font-weight:500}
+.pct-legend{display:flex;gap:16px;font-size:12px;font-weight:600}
+.legend-item{display:flex;align-items:center;gap:5px;color:var(--text-2)}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.dot.green{background:#16a34a}
+.dot.red{background:#ef4444}
+.rank-badge{
+  margin-top:12px;padding:6px 16px;border-radius:99px;
+  font-size:12px;font-weight:700;text-align:center;
+}
+.rank-badge.excellent{background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff}
+.rank-badge.good{background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff}
+.rank-badge.average{background:linear-gradient(135deg,#d97706,#f59e0b);color:#fff}
+.rank-badge.low{background:linear-gradient(135deg,#dc2626,#ef4444);color:#fff}
+
+/* ── Attendance History ───────────────────────────────── */
+.history-card{}
+.history-list{display:flex;flex-direction:column;gap:8px;max-height:400px;overflow-y:auto}
+.history-item{
+  display:flex;align-items:center;gap:12px;
+  padding:10px 14px;border-radius:9px;
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  transition:background var(--transition);
+}
+.history-item:hover{background:var(--blue-50)}
+body.dark-mode .history-item:hover{background:rgba(59,130,246,0.08)}
+.history-date{
+  font-size:12px;font-weight:600;color:var(--text-2);
+  font-family:'JetBrains Mono',monospace;
+  min-width:90px;
+}
+.history-day{font-size:11px;color:var(--text-3);flex:1}
+.history-time{font-size:11px;color:var(--text-3);font-family:'JetBrains Mono',monospace}
+.history-empty{text-align:center;padding:32px;color:var(--text-3);font-size:14px}

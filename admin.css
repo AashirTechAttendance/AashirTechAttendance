@@ -1,0 +1,101 @@
+/* ═══════════════════════════════════════════════════════
+   ADMIN DASHBOARD STYLES
+═══════════════════════════════════════════════════════ */
+
+/* ── Admin Tabs ──────────────────────────────────────── */
+.admin-tabs{
+  display:flex;gap:4px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:6px;
+  margin-bottom:24px;
+  width:fit-content;
+  flex-wrap:wrap;
+}
+.admin-tab{
+  padding:8px 18px;border-radius:8px;
+  font-size:13px;font-weight:600;
+  border:none;cursor:pointer;
+  background:transparent;color:var(--text-2);
+  transition:all var(--transition);
+  font-family:'Sora',sans-serif;
+  white-space:nowrap;
+}
+.admin-tab:hover{background:var(--surface-2);color:var(--text-1)}
+.admin-tab.active{background:var(--blue-600);color:#fff;box-shadow:0 2px 8px rgba(37,99,235,0.3)}
+.admin-tab-content{animation:fadeIn 0.25s ease}
+
+/* ── Charts Grid ─────────────────────────────────────── */
+.admin-charts-grid{
+  display:grid;grid-template-columns:2fr 1fr;
+  gap:16px;margin-bottom:20px;
+}
+@media(max-width:900px){.admin-charts-grid{grid-template-columns:1fr}}
+
+/* ── Performers List ──────────────────────────────────── */
+.performers-list{display:flex;flex-direction:column;gap:8px}
+.performer-item{
+  display:flex;align-items:center;gap:12px;
+  padding:10px 14px;border-radius:9px;
+  background:var(--surface-2);border:1px solid var(--border);
+}
+.performer-rank{
+  width:26px;height:26px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:800;
+}
+.performer-rank.rank-1{background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#fff}
+.performer-rank.rank-2{background:linear-gradient(135deg,#94a3b8,#cbd5e1);color:#fff}
+.performer-rank.rank-3{background:linear-gradient(135deg,#d97706,#f59e0b);color:#fff}
+.performer-rank.rank-other{background:var(--surface);border:1px solid var(--border);color:var(--text-3)}
+.performer-name{font-size:13px;font-weight:700;color:var(--text-1);flex:1}
+.performer-roll{font-size:11px;color:var(--text-3);font-family:'JetBrains Mono',monospace}
+.performer-pct{
+  font-size:14px;font-weight:800;
+  font-family:'JetBrains Mono',monospace;
+}
+.performer-pct.excellent{color:#16a34a}
+.performer-pct.good{color:var(--blue-600)}
+.performer-pct.average{color:#d97706}
+.performer-pct.low{color:#dc2626}
+
+/* ── Table Actions ───────────────────────────────────── */
+.btn-table-view{
+  background:var(--blue-50);color:var(--blue-700);
+  border:1px solid var(--blue-100);border-radius:6px;
+  padding:4px 10px;font-size:11px;font-weight:700;
+  cursor:pointer;transition:all var(--transition);font-family:'Sora',sans-serif;
+}
+.btn-table-view:hover{background:var(--blue-600);color:#fff;border-color:var(--blue-600)}
+
+/* ── Reports ─────────────────────────────────────────── */
+.reports-filter-bar{
+  display:flex;align-items:flex-end;gap:14px;
+  margin-bottom:20px;flex-wrap:wrap;
+}
+.reports-filter-bar .form-group{margin-bottom:0}
+.report-actions{display:flex;gap:8px;flex-wrap:wrap}
+
+/* ── Student Detail Modal Content ────────────────────── */
+.student-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:580px){.student-detail-grid{grid-template-columns:1fr}}
+.detail-stat{
+  background:var(--surface-2);border:1px solid var(--border);
+  border-radius:10px;padding:14px;text-align:center;
+}
+.detail-stat-val{font-size:24px;font-weight:800;font-family:'JetBrains Mono',monospace}
+.detail-stat-label{font-size:11px;color:var(--text-3);margin-top:3px;font-weight:500}
+.detail-stat.blue .detail-stat-val{color:var(--blue-600)}
+.detail-stat.green .detail-stat-val{color:#16a34a}
+.detail-stat.red .detail-stat-val{color:#dc2626}
+.detail-stat.purple .detail-stat-val{color:#9333ea}
+.detail-history{margin-top:16px}
+.detail-history h3{font-size:14px;font-weight:700;margin-bottom:10px}
+.detail-history-list{max-height:220px;overflow-y:auto;display:flex;flex-direction:column;gap:6px}
+.detail-hist-item{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:7px 12px;background:var(--surface-2);
+  border-radius:7px;border:1px solid var(--border);
+  font-size:12px;
+}
